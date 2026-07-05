@@ -1,204 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Vagus</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Token layer ── */
+:root {
+  --bg:           #F5F6F9;
+  --surface:      #FFFFFF;
+  --text:         #1B2030;
+  --text-2:       #525C72;
+  --label:        #7A87A0;
+  --accent:       #3A6DB5;
+  --accent-dim:   #E6EDF8;
+  --rule:         #DCE2EE;
+  --font-body:    -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
-    --bg: #f6f8fb;
-    --surface: #ffffff;
-    --text: #1b2333;
-    --text-secondary: #4a5a70;
-    --label: #6b809a;
-    --accent: #4e7fa6;
-    --accent-light: #ddeaf5;
-    --rule: #dce3ec;
-    --font: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --bg:           #111318;
+    --surface:      #181C24;
+    --text:         #DCE2EE;
+    --text-2:       #8E9BB3;
+    --label:        #586173;
+    --accent:       #6B9AD4;
+    --accent-dim:   #1B2540;
+    --rule:         #222733;
   }
+}
 
-  html { background: var(--bg); color: var(--text); font-family: var(--font); }
+:root[data-theme="light"] {
+  --bg:           #F5F6F9;
+  --surface:      #FFFFFF;
+  --text:         #1B2030;
+  --text-2:       #525C72;
+  --label:        #7A87A0;
+  --accent:       #3A6DB5;
+  --accent-dim:   #E6EDF8;
+  --rule:         #DCE2EE;
+}
 
-  body {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 56px 32px 96px;
-    line-height: 1.7;
-    font-size: 15px;
-  }
+:root[data-theme="dark"] {
+  --bg:           #111318;
+  --surface:      #181C24;
+  --text:         #DCE2EE;
+  --text-2:       #8E9BB3;
+  --label:        #586173;
+  --accent:       #6B9AD4;
+  --accent-dim:   #1B2540;
+  --rule:         #222733;
+}
 
-  /* Header */
-  .header {
-    padding-bottom: 36px;
-    border-bottom: 1.5px solid var(--rule);
-    margin-bottom: 48px;
-  }
+/* ── Base ── */
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.72;
+  -webkit-text-size-adjust: 100%;
+}
 
-  .app-label {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 3px 10px;
-    border-radius: 3px;
-    margin-bottom: 16px;
-  }
+body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 28px 96px;
+}
 
-  h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    line-height: 1.25;
-    margin-bottom: 12px;
-    text-wrap: balance;
-  }
+/* ── Header ── */
+.doc-header {
+  padding-bottom: 36px;
+  border-bottom: 1.5px solid var(--rule);
+  margin-bottom: 52px;
+}
 
-  .meta {
-    font-size: 13px;
-    color: var(--label);
-  }
+.app-label {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
 
-  /* Sections */
-  .section {
-    margin-bottom: 40px;
-  }
+h1 {
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--text);
+  text-wrap: balance;
+  margin-bottom: 11px;
+}
 
-  .section + .section {
-    padding-top: 40px;
-    border-top: 1px solid var(--rule);
-  }
+.doc-meta {
+  font-size: 13px;
+  color: var(--label);
+}
 
-  h2 {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 14px;
-  }
+/* ── Sections ── */
+.section {
+  padding-bottom: 44px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 44px;
+}
 
-  h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin-top: 22px;
-    margin-bottom: 6px;
-  }
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
-  p {
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-  }
+h2 {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
 
-  p:last-child { margin-bottom: 0; }
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 28px;
+  margin-bottom: 7px;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 12px;
-  }
+p {
+  color: var(--text-2);
+  margin-bottom: 13px;
+}
 
-  ul li {
-    color: var(--text-secondary);
-    padding: 5px 0 5px 18px;
-    position: relative;
-  }
+p:last-child { margin-bottom: 0; }
 
-  ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 13px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--rule);
-    border: 1.5px solid var(--accent);
-  }
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 13px;
+}
 
-  /* Data table */
-  .data-grid {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 8px;
-    font-size: 14px;
-  }
+ul li {
+  color: var(--text-2);
+  padding: 4px 0 4px 18px;
+  position: relative;
+}
 
-  .data-grid th {
-    text-align: left;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--label);
-    padding: 0 12px 10px 0;
-    border-bottom: 1.5px solid var(--rule);
-  }
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1.5px solid var(--accent);
+}
 
-  .data-grid td {
-    padding: 11px 12px 11px 0;
-    vertical-align: top;
-    border-bottom: 1px solid var(--rule);
-    color: var(--text-secondary);
-  }
+/* ── Data table ── */
+.table-wrap { overflow-x: auto; margin-top: 6px; }
 
-  .data-grid td:first-child {
-    font-weight: 500;
-    color: var(--text);
-    white-space: nowrap;
-    padding-right: 24px;
-  }
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
 
-  .data-grid tr:last-child td { border-bottom: none; }
+.data-table th {
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--label);
+  padding: 0 16px 11px 0;
+  border-bottom: 1.5px solid var(--rule);
+}
 
-  /* Contact block */
-  .contact {
-    background: var(--accent-light);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 4px 4px 0;
-    padding: 16px 20px;
-    margin-top: 16px;
-  }
+.data-table td {
+  padding: 12px 16px 12px 0;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+  color: var(--text-2);
+  line-height: 1.6;
+}
 
-  .contact p {
-    color: var(--text-secondary);
-    margin: 0;
-    font-size: 14px;
-  }
+.data-table td:first-child {
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  width: 200px;
+}
 
-  a {
-    color: var(--accent);
-    text-decoration: none;
-  }
+.data-table tr:last-child td { border-bottom: none; }
 
-  a:hover { text-decoration: underline; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+/* ── Contact block ── */
+.contact-block {
+  background: var(--accent-dim);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  padding: 16px 20px;
+  margin-top: 16px;
+}
 
-  @media (max-width: 480px) {
-    body { padding: 36px 20px 72px; }
-    h1 { font-size: 22px; }
-    .data-grid td:first-child { white-space: normal; }
-  }
+.contact-block p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ── Links ── */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  body { padding: 36px 18px 72px; }
+  h1 { font-size: 22px; }
+  .data-table td:first-child { white-space: normal; width: auto; }
+}
 </style>
+</head>
+<body>
 
-<div class="header">
+<header class="doc-header">
   <span class="app-label">Vagus</span>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: July 2, 2026 &nbsp;·&nbsp; Last updated: July 2, 2026</p>
-</div>
+  <p class="doc-meta">Effective date: July 2, 2026 &nbsp;·&nbsp; Last updated: July 5, 2026</p>
+</header>
 
 <div class="section">
   <h2>Overview</h2>
-  <p>Vagus is a music release tracker. You follow artists, and the app notifies you when they release new music. This policy explains what data the app collects to make that work, who it's shared with, and how long it's kept.</p>
+  <p>Vagus is a music release tracker. You follow artists, and the app notifies you when they release new music. This policy explains what data the app collects, who it's shared with, and how long it's kept.</p>
   <p>Vagus is developed and operated by a single developer. Your data is not sold and is not used for advertising.</p>
 </div>
 
 <div class="section">
   <h2>What we collect</h2>
 
-  <div style="overflow-x: auto;">
-    <table class="data-grid">
+  <div class="table-wrap">
+    <table class="data-table">
       <thead>
         <tr>
           <th>Data</th>
@@ -208,52 +259,49 @@
       <tbody>
         <tr>
           <td>Email address &amp; account info</td>
-          <td>To identify your account and sync your data across devices. Provided via Google Sign-In or email/password through Firebase Authentication.</td>
+          <td>To identify your account and sync your library across devices. Provided via Google Sign-In or email/password through Firebase Authentication.</td>
         </tr>
         <tr>
           <td>Artists you track</td>
-          <td>Stored in Firestore to sync your library across devices and power the release check pipeline.</td>
+          <td>Stored in Firestore to sync your library across devices and run the daily release check pipeline.</td>
         </tr>
         <tr>
           <td>Tags and tiers</td>
-          <td>Labels you assign to artists, stored in your account to filter and organize your library.</td>
+          <td>Labels you assign to artists, stored in your account to organize and filter your library.</td>
         </tr>
         <tr>
           <td>Inbox and release history</td>
-          <td>Releases added to your inbox, including album name, release date, and artist. Stored per-user in Firestore.</td>
-        </tr>
-        <tr>
-          <td>Spotify access token</td>
-          <td>A temporary OAuth token used to search for and identify artists on Spotify. Vagus does not access your listening history, playlists, or playback controls.</td>
+          <td>Releases added to your inbox (album name, release date, artist). Stored per-user in Firestore.</td>
         </tr>
         <tr>
           <td>Push notification token</td>
-          <td>A device token issued by Firebase Cloud Messaging, used to deliver new release notifications. No messages are sent without your involvement in setting up tracking.</td>
+          <td>A device token issued by Firebase Cloud Messaging, used to deliver new release notifications.</td>
         </tr>
         <tr>
           <td>Subscription status</td>
-          <td>Purchase receipts and subscription state are managed by RevenueCat to verify access to premium features. RevenueCat receives your device's purchase receipt; Vagus does not store payment card details.</td>
+          <td>Purchase receipts and subscription state are managed by RevenueCat to verify access to premium features. Vagus does not store payment card details.</td>
         </tr>
         <tr>
-          <td>Last.fm API key (optional)</td>
-          <td>If you choose to enter a Last.fm key for scrobbling, it is stored locally on your device and is never sent to our servers.</td>
+          <td>Last.fm credentials (optional)</td>
+          <td>If you choose to connect Last.fm, your username and API key are stored locally on your device only and are never transmitted to Vagus servers. They are used to retrieve your listening history from Last.fm's API.</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <h3>Local cache</h3>
-  <p>Vagus stores a local SQLite cache on your device containing your artist list, release catalogue, and inbox — so the app works without waiting on a network request. This data mirrors what's in your Firestore account and is cleared when you sign out.</p>
+  <p>Vagus stores a local database on your device containing your artist list, release catalogue, and inbox so the app works without waiting on a network request each time. This mirrors your Firestore data and is cleared when you sign out or uninstall the app.</p>
 </div>
 
 <div class="section">
   <h2>What we don't collect</h2>
   <ul>
-    <li>Listening history or playback data</li>
+    <li>Your Spotify account data, listening history, or playlists</li>
+    <li>Listening or playback data from any source</li>
     <li>Location data</li>
     <li>Contacts or address book</li>
     <li>Microphone or camera access</li>
-    <li>Data from users who are not signed in</li>
+    <li>Any data from users who are not signed in</li>
   </ul>
 </div>
 
@@ -262,42 +310,48 @@
   <p>Vagus uses the following third-party services to function. Each service's privacy practices are governed by their own policies.</p>
 
   <h3>Firebase (Google)</h3>
-  <p>Used for account authentication (Firebase Auth), data storage (Firestore), and push notifications (Cloud Messaging). Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+  <p>Used for account authentication (Firebase Auth), cloud data storage (Firestore), push notifications (Cloud Messaging), and server-side processing (Cloud Functions). Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
-  <h3>Spotify</h3>
-  <p>Used to search for and identify artists. Vagus requests read-only access and does not read your Spotify library, listening history, or control playback. Governed by <a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify's Privacy Policy</a>.</p>
+  <h3>Spotify Web API</h3>
+  <p>Used to search for artists and retrieve artist/album metadata using an app-level access token. <strong>Vagus does not connect to your Spotify account</strong> and cannot access your Spotify library, listening history, playlists, or playback. No user Spotify credentials or tokens are collected or stored. Governed by <a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify's Privacy Policy</a>.</p>
 
   <h3>Deezer</h3>
-  <p>Used to fetch release and catalogue data for artists. No user account or login is required. Governed by <a href="https://www.deezer.com/legal/personal-datas" target="_blank" rel="noopener">Deezer's Privacy Policy</a>.</p>
+  <p>Used to fetch release catalogue and artist metadata via Deezer's public API. No user account or authentication is required. Governed by <a href="https://www.deezer.com/legal/personal-datas" target="_blank" rel="noopener">Deezer's Privacy Policy</a>.</p>
+
+  <h3>MusicBrainz</h3>
+  <p>Used to look up open music metadata. No user data is sent. Governed by the <a href="https://metabrainz.org/privacy" target="_blank" rel="noopener">MetaBrainz Privacy Policy</a>.</p>
 
   <h3>RevenueCat</h3>
-  <p>Used to manage in-app subscriptions and verify purchase receipts. Governed by <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</p>
+  <p>Used to manage in-app subscriptions and verify purchase receipts. RevenueCat may receive your device's purchase receipt and a device identifier. Governed by <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</p>
 
   <h3>Last.fm (optional)</h3>
-  <p>If you choose to enable Last.fm integration, track listens may be scrobbled to your Last.fm account. This is opt-in and requires you to supply your own API key. Governed by <a href="https://www.last.fm/legal/privacy" target="_blank" rel="noopener">Last.fm's Privacy Policy</a>.</p>
+  <p>If you choose to enable Last.fm integration by supplying your username and API key, Vagus reads your listening history from Last.fm to show which tracks you've heard. Your Last.fm credentials are stored only on your device. Governed by <a href="https://www.last.fm/legal/privacy" target="_blank" rel="noopener">Last.fm's Privacy Policy</a>.</p>
 </div>
 
 <div class="section">
   <h2>Data retention &amp; deletion</h2>
-  <p>Your Firestore data (artists, inbox, tags) is retained as long as your account exists. The local device cache is cleared when you sign out.</p>
-  <p>To delete your account and all associated data, contact us at the address below. We will remove your Firestore data within 30 days.</p>
+  <p>Your Firestore data (artists, inbox, tags) is retained as long as your account exists. Your local device cache is cleared when you sign out or uninstall the app.</p>
+  <p>To delete your account and all associated data, contact us at the address below. We will remove your Firestore data within 30 days of a verified request.</p>
 </div>
 
 <div class="section">
   <h2>Children</h2>
-  <p>Vagus is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us and we will delete it.</p>
+  <p>Vagus is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us and we will delete it promptly.</p>
 </div>
 
 <div class="section">
   <h2>Changes to this policy</h2>
-  <p>If we make material changes to this policy, we will update the effective date at the top of this page. Continued use of the app after changes take effect constitutes acceptance of the updated policy.</p>
+  <p>If we make material changes to this policy, we will update the date at the top of this page. Continued use of the app after changes take effect constitutes acceptance of the updated policy.</p>
 </div>
 
 <div class="section">
   <h2>Contact</h2>
   <p>Questions about this policy or requests to delete your data:</p>
-  <div class="contact">
+  <div class="contact-block">
     <p><strong>Michael Tran</strong><br>
     <a href="mailto:justanappearance@gmail.com">justanappearance@gmail.com</a></p>
   </div>
 </div>
+
+</body>
+</html>
